@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:phone_zone/core/utils/color_manager.dart';
 import 'package:phone_zone/core/utils/route_manager.dart';
+import 'package:phone_zone/features/onboarding/presentation/view/on_boarding_view.dart';
 import 'package:phone_zone/features/splash/presentation/view/widgets/custom_image_scale_animation.dart';
 
 class SplashView extends StatefulWidget {
@@ -15,17 +18,8 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    // durationNav();
+    durationNav();
   }
-
-  // void durationNav() {
-  //   Timer(const Duration(seconds: 3), () {
-  //     Navigator.pushReplacement(
-  //       context,
-  //       MaterialPageRoute(builder: (context) => const HomeView()),
-  //     );
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -53,5 +47,14 @@ class _SplashViewState extends State<SplashView> {
         ),
       ),
     );
+  }
+
+  void durationNav() {
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const OnBoardingView()),
+      );
+    });
   }
 }
