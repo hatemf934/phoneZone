@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phone_zone/core/utils/font_size_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 
 class TitleAuthView extends StatelessWidget {
@@ -15,9 +16,14 @@ class TitleAuthView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 30),
-        Text(textTitle1, style: Styles.firaSans24),
-        Text(textTitle2, style: Styles.firaSans24),
+        Text(
+          textTitle1,
+          style: Styles.firaSansbold.copyWith(fontSize: FontSizeManager.font34),
+        ),
+        Text(
+          textTitle2,
+          style: Styles.firaSansbold.copyWith(fontSize: FontSizeManager.font34),
+        ),
       ],
     );
   }

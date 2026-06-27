@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   introduction_screen: ^4.0.0
   google_fonts: ^8.1.0
+  flutter_social_button: ^1.1.6+1
+  auth_buttons: ^1.0.1+4
 
 dev_dependencies:
   flutter_test:

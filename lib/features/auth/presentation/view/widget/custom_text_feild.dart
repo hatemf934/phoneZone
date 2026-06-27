@@ -69,7 +69,7 @@ class _CustomTextFeildState extends State<CustomTextFeild> {
             color: ColorManager.enabledColor,
           ),
           errorBorder: buildOutlineInputBorder(color: ColorManager.colorred),
-          fillColor: ColorManager.fillColor,
+          fillColor: ColorManager.colorWhite,
           filled: true,
         ),
       ),

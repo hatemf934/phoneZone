@@ -17,4 +17,7 @@ class TextManager {
   static const String welcome = "Welcome";
   static const String userName = "Username";
   static const String passWord = "Password";
+  static const String forgetPassword = "Forgot Password?";
+  static const String orContinue = "- OR Continue with -";
+  static const String login = "Login";
 }

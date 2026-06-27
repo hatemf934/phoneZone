@@ -5,9 +5,8 @@ import 'package:phone_zone/core/utils/font_size_manager.dart';
 
 class Styles {
   Styles._();
-  static const TextStyle firaSans24 = TextStyle(
+  static const TextStyle firaSansbold = TextStyle(
     fontWeight: FontWeight.bold,
-    fontSize: FontSizeManager.font24,
     fontFamily: FontFamilyManager.firaSans,
   );
   static const TextStyle firaSans14 = TextStyle(
@@ -21,5 +20,11 @@ class Styles {
     fontSize: FontSizeManager.font15,
     fontFamily: FontFamilyManager.firaSans,
     color: ColorManager.colorBlack,
+  );
+  static const TextStyle firaSans18 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: FontSizeManager.font18,
+    fontFamily: FontFamilyManager.firaSans,
+    color: ColorManager.colorWhite,
   );
 }

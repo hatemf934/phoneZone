@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:phone_zone/core/utils/font_size_manager.dart';
 import 'package:phone_zone/core/utils/height_manager.dart';
 import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
@@ -24,7 +25,12 @@ PageViewModel buildPageView({
               width: screenWidth * 0.85,
               fit: BoxFit.contain,
             ),
-            Text(title, style: Styles.firaSans24),
+            Text(
+              title,
+              style: Styles.firaSansbold.copyWith(
+                fontSize: FontSizeManager.font24,
+              ),
+            ),
             SizedBox(height: HeightManager.h20),
             Padding(
               padding: const EdgeInsets.all(PaddingManager.p8),
