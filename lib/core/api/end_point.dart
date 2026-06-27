@@ -10,10 +10,8 @@ class ApiKey {
   static String message = "message";
   static String token = "token";
   static String id = "id";
-  static String name = "name";
+  static String username = "username";
   static String phone = "phone";
   static String password = "password";
-  static String confirmPassword = "confirmPassword";
   static String email = "email";
-  static String profilePic = "profilePic";
 }
