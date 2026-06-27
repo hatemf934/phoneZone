@@ -17,9 +17,16 @@ class TextManager {
   static const String welcome = "Welcome";
   static const String userName = "Username";
   static const String passWord = "Password";
+  static const String email = "Email";
+  static const String confirmPassword = "Confirm Password";
+  static const String phoneNumber = "Phone Number";
   static const String forgetPassword = "Forgot Password?";
   static const String orContinue = "- OR Continue with -";
   static const String login = "Login";
-  static const String createAccount = 'Create An Account ';
+  static const String createAnAccount = 'Create An Account ';
+  static const String createAn = "Create an";
+  static const String createAccount = "Create Account";
   static const String signUp = "Sign Up";
+  static const String alreadyHaveAccount = "I Already Have an Account";
+  static const String account = "account";
 }

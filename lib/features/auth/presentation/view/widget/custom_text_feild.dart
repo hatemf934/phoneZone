@@ -8,7 +8,6 @@ class CustomTextFeild extends StatefulWidget {
   const CustomTextFeild({
     super.key,
     required this.hintText,
-    required this.iconData,
     this.obscureText = false,
     this.validator,
     this.controller,
@@ -16,7 +15,6 @@ class CustomTextFeild extends StatefulWidget {
     required this.prefixIcon,
   });
   final String hintText;
-  final IconData iconData;
   final bool obscureText;
   final String? Function(String?)? validator;
   final TextEditingController? controller;

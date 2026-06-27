@@ -5,13 +5,12 @@ import 'package:phone_zone/core/utils/route_manager.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/account_action_row.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/custom_button.dart';
-import 'package:phone_zone/features/auth/presentation/view/widget/custom_text_button.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/or_continue_google_section.dart';
-import 'package:phone_zone/features/auth/presentation/view/widget/text_form_feild_sign_in_section.dart';
+import 'package:phone_zone/features/auth/presentation/view/widget/text_form_feild_sign_up_section.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/title_auth_view.dart';
 
-class BodySignInView extends StatelessWidget {
-  const BodySignInView({super.key});
+class BodySignUpView extends StatelessWidget {
+  const BodySignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,26 +25,21 @@ class BodySignInView extends StatelessWidget {
         children: [
           const Spacer(flex: 2),
           const TitleAuthView(
-            textTitle1: TextManager.welcome,
-            textTitle2: TextManager.back,
+            textTitle1: TextManager.createAn,
+            textTitle2: TextManager.account,
           ),
-          Spacer(flex: 1),
-          const TextFormFeildSignInSection(),
-          const SizedBox(height: HeightManager.h10),
-          CustomTextButton(
-            onTap: () {},
-            textButton: TextManager.forgetPassword,
-          ),
+          const Spacer(flex: 1),
+          const TextFormFeildSignUpSection(),
           const SizedBox(height: HeightManager.h20),
-          const CustomButton(textButton: TextManager.login),
+          const CustomButton(textButton: TextManager.createAccount),
           const SizedBox(height: HeightManager.h40),
           const OrContinueGoogleSection(),
           const SizedBox(height: HeightManager.h20),
           AccountActionRow(
             onTap: () =>
-                Navigator.pushReplacementNamed(context, RouteManager.signUp),
-            labelText: TextManager.createAccount,
-            actionText: TextManager.signUp,
+                Navigator.pushReplacementNamed(context, RouteManager.signIn),
+            labelText: TextManager.alreadyHaveAccount,
+            actionText: TextManager.login,
           ),
           const Spacer(flex: 2),
         ],

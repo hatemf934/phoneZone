@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phone_zone/core/utils/color_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
+import 'package:phone_zone/core/utils/width_manager.dart';
 
 class AccountActionRow extends StatelessWidget {
   const AccountActionRow({
@@ -18,6 +19,7 @@ class AccountActionRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(labelText, style: Styles.firaSans14),
+        SizedBox(width: WidthManager.w8),
         GestureDetector(
           onTap: onTap,
           child: Text(
