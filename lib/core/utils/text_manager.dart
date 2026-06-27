@@ -39,4 +39,20 @@ class TextManager {
   static const String sectionAllFeatured = 'All Featured';
   static const String sectionSortButton = 'Sort';
   static const String productCurrencySymbol = '₹';
+  static String fieldIsRequired = "This field is required";
+  static String invalidEmailOrPassword = "Invalid email or password";
+  static String passwordFromAtoZ =
+      "Must include at least one lowercase letter [a-z]";
+  static String passwordSpicailCharacter =
+      "Must include at least one special character";
+  static String passwordLeastNumber = "Must include at least one number";
+  static String passwordLeastAt8Number =
+      "Password must be at least 8 characters";
+  static String pleaseSelectDataOfBrith = "Please select your date of birth";
+  static String phoneTooShort = "Phone number is too short";
+  static String invalidPhoneFormat = "Please enter numbers only";
+  static String requiredPhone = "Please enter your phone number";
+  static String invalidFullName = "Full name must be 3 words";
+  static String passwordsNotMatch = "Passwords do not match";
+  static String pleaseEnterNumber = "Please enter a valid number only";
 }
