@@ -30,7 +30,7 @@ class _SplashViewState extends State<SplashView> {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              ColorManager.premaryColor,
+              ColorManager.primaryColor,
               ColorManager.colorWhite,
               ColorManager.colorWhite,
             ],
@@ -42,7 +42,7 @@ class _SplashViewState extends State<SplashView> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             CustomImageScaleAnimation(),
-            CircularProgressIndicator(color: ColorManager.premaryColor),
+            CircularProgressIndicator(color: ColorManager.primaryColor),
           ],
         ),
       ),

@@ -13,4 +13,8 @@ class TextManager {
   static const String donetext = "Done";
   static const String skipText = "Skip";
   static const String nextText = "Next";
+  static const String back = "Back!";
+  static const String welcome = "Welcome";
+  static const String userName = "Username";
+  static const String passWord = "Password";
 }

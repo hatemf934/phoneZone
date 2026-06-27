@@ -7,7 +7,7 @@ import 'package:phone_zone/core/utils/route_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/core/utils/width_manager.dart';
-import 'package:phone_zone/features/home/presentation/view/home_view.dart';
+import 'package:phone_zone/features/auth/presentation/view/sign_in_view.dart';
 import 'package:phone_zone/features/onboarding/presentation/view/widget/list_of_page_view.dart';
 
 class OnBoardingView extends StatelessWidget {
@@ -19,7 +19,7 @@ class OnBoardingView extends StatelessWidget {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            ColorManager.premaryColor,
+            ColorManager.primaryColor,
             ColorManager.colorWhite,
             ColorManager.colorWhite,
           ],
@@ -33,23 +33,23 @@ class OnBoardingView extends StatelessWidget {
         dotsDecorator: DotsDecorator(
           size: Size.fromRadius(RaduisManager.r4),
           activeSize: Size(WidthManager.w30, WidthManager.w8),
-          activeColor: ColorManager.premaryColor,
+          activeColor: ColorManager.primaryColor,
           color: ColorManager.colorGrey,
           spacing: EdgeInsets.symmetric(horizontal: PaddingManager.p3),
           activeShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(RaduisManager.r25),
           ),
         ),
-        onDone: () => Navigator.pushReplacementNamed(context, HomeView.id),
+        onDone: () => Navigator.pushReplacementNamed(context, SignInView.id),
         dotsFlex: 4,
         showBackButton: true,
         showSkipButton: true,
         skip: Text(
           TextManager.skipText,
           style: Styles.firaSans15.copyWith(
-            color: ColorManager.premaryColor,
+            color: ColorManager.primaryColor,
             decoration: TextDecoration.underline,
-            decorationColor: ColorManager.premaryColor,
+            decorationColor: ColorManager.primaryColor,
             decorationThickness: 1.5,
           ),
         ),
@@ -57,7 +57,7 @@ class OnBoardingView extends StatelessWidget {
         next: Text(TextManager.nextText, style: Styles.firaSans15),
         done: Text(
           TextManager.donetext,
-          style: Styles.firaSans15.copyWith(color: ColorManager.premaryColor),
+          style: Styles.firaSans15.copyWith(color: ColorManager.primaryColor),
         ),
       ),
     );
