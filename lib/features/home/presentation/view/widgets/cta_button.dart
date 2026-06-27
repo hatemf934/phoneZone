@@ -3,6 +3,7 @@ import 'package:phone_zone/core/utils/color_manager.dart';
 import 'package:phone_zone/core/utils/font_size_manager.dart';
 import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/raduis_manager.dart';
+import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
 
 class CtaButton extends StatelessWidget {
@@ -23,11 +24,7 @@ class CtaButton extends StatelessWidget {
         ),
         child: Text(
           TextManager.promoBannerCta,
-          style: const TextStyle(
-            color: ColorManager.colorBlack87,
-            fontSize: FontSizeManager.font14,
-            fontWeight: FontWeight.w600,
-          ),
+          style: Styles.styleBlck87.copyWith(fontSize: FontSizeManager.font14),
         ),
       ),
     );

@@ -36,14 +36,8 @@ class Styles {
     color: ColorManager.colorGrey,
     fontSize: FontSizeManager.font14,
   );
-  // static const TextStyle whiteBold = TextStyle(
-  //   color: ColorManager.colorWhite,
-  //   fontSize: 22,
-  //   fontWeight: FontWeight.w700,
-  // );
-  // static const TextStyle whiteBold = TextStyle(
-  //   color: ColorManager.colorWhite,
-  //   fontSize: FontSizeManager.font9,
-  //   fontWeight: FontWeight.bold,
-  // );
+  static const TextStyle styleBlck87 = TextStyle(
+    color: ColorManager.colorBlack87,
+    fontWeight: FontWeight.w800,
+  );
 }

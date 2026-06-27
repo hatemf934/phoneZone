@@ -14,4 +14,11 @@ class ColorManager {
   static const Color badgeTitleground = Color(0xFF2A2A3D);
   static const Color badgeBackground = Color(0xff333D6D);
   static const Color badgeText = Color(0xFF9B9BB8);
+
+  //
+  static const Color sectionTitleText = Color(0xFF111111);
+  static const Color sortButtonBorder = Color(0xFFDDDDDD);
+  static const Color sortButtonText = Color(0xFF333333);
+  static const Color sortButtonIcon = Color(0xFF333333);
+  static const Color sortButtonBg = Colors.white;
 }

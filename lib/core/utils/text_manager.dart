@@ -31,17 +31,11 @@ class TextManager {
   static const String account = "account";
   static const String searchHint = "what are you looking for";
   static const String badgeOverflow = '99+';
-
-  /// Badge label above the promo title.
   static const String promoBadgeLabel = 'LIMITED TIME';
-
-  /// Default promo card title.
   static const String promoBannerTitle = 'Accessories Bundle';
-
-  /// Default promo card subtitle/description.
   static const String promoBannerSubtitle =
       'Save up to 40% on chargers, cases and screen protectors.';
-
-  /// CTA button label on the promo card.
   static const String promoBannerCta = 'Shop Now';
+  static const String sectionAllFeatured = 'All Featured';
+  static const String sectionSortButton = 'Sort';
 }
