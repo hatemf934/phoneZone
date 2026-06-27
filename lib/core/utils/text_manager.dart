@@ -38,4 +38,5 @@ class TextManager {
   static const String promoBannerCta = 'Shop Now';
   static const String sectionAllFeatured = 'All Featured';
   static const String sectionSortButton = 'Sort';
+  static const String productCurrencySymbol = '₹';
 }
