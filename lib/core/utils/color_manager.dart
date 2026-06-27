@@ -11,4 +11,7 @@ class ColorManager {
   static const Color colorBlack87 = Colors.black87;
   static const Color colorGrey = Colors.grey;
   static const Color colorred = Colors.red;
+  static const Color badgeTitleground = Color(0xFF2A2A3D);
+  static const Color badgeBackground = Color(0xff333D6D);
+  static const Color badgeText = Color(0xFF9B9BB8);
 }

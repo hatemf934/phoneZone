@@ -59,7 +59,9 @@ class IconButtonAppBar extends StatelessWidget {
                 ),
                 child: Text(
                   badgeCount > 99 ? TextManager.badgeOverflow : '$badgeCount',
-                  style: Styles.whiteBold,
+                  style: Styles.styleWhite.copyWith(
+                    fontSize: FontSizeManager.font9,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),

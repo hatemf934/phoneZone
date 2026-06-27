@@ -28,9 +28,22 @@ class Styles {
     color: ColorManager.colorWhite,
   );
 
-  static const TextStyle whiteBold = TextStyle(
+  static const TextStyle styleWhite = TextStyle(
     color: ColorManager.colorWhite,
-    fontSize: FontSizeManager.font9,
     fontWeight: FontWeight.bold,
   );
+  static const TextStyle styleGrey = TextStyle(
+    color: ColorManager.colorGrey,
+    fontSize: FontSizeManager.font14,
+  );
+  // static const TextStyle whiteBold = TextStyle(
+  //   color: ColorManager.colorWhite,
+  //   fontSize: 22,
+  //   fontWeight: FontWeight.w700,
+  // );
+  // static const TextStyle whiteBold = TextStyle(
+  //   color: ColorManager.colorWhite,
+  //   fontSize: FontSizeManager.font9,
+  //   fontWeight: FontWeight.bold,
+  // );
 }
