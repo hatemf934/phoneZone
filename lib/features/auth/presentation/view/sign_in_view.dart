@@ -10,6 +10,9 @@ class SignInView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height,
+        ),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [

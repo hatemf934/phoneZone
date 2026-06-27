@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:phone_zone/core/utils/color_manager.dart';
 import 'package:phone_zone/core/utils/font_family_manager.dart';
 import 'package:phone_zone/core/utils/raduis_manager.dart';
+import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/width_manager.dart';
 
 class CustomTextFeild extends StatefulWidget {
@@ -46,6 +47,9 @@ class _CustomTextFeildState extends State<CustomTextFeild> {
         cursorColor: ColorManager.primaryColor,
         decoration: InputDecoration(
           hintText: widget.hintText,
+          hintStyle: Styles.firaSans15.copyWith(
+            color: ColorManager.enabledColor,
+          ),
           suffixIcon: widget.obscureText
               ? IconButton(
                   onPressed: () {
@@ -58,13 +62,16 @@ class _CustomTextFeildState extends State<CustomTextFeild> {
                       : Icon(Icons.visibility_off),
                 )
               : null,
-          prefixIcon: Icon(widget.prefixIcon),
+          prefixIcon: Icon(widget.prefixIcon, color: ColorManager.colorBlack87),
           errorStyle: TextStyle(color: ColorManager.colorred),
           enabledBorder: buildOutlineInputBorder(
             color: ColorManager.enabledColor,
           ),
           focusedBorder: buildOutlineInputBorder(
             color: ColorManager.enabledColor,
+          ),
+          focusedErrorBorder: buildOutlineInputBorder(
+            color: ColorManager.colorred,
           ),
           errorBorder: buildOutlineInputBorder(color: ColorManager.colorred),
           fillColor: ColorManager.colorWhite,

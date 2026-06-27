@@ -1,4 +1,3 @@
-import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/core/utils/text_validate_manager.dart';
 
 class FormValidate {
@@ -20,73 +19,76 @@ class FormValidate {
 
   String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return TextManager.invalidEmailOrPassword;
+      return TextValidateManager.invalidEmailOrPassword;
     }
     if (!emailRegExp.hasMatch(value.trim())) {
-      return TextManager.invalidEmailOrPassword;
+      if (!value.trim().endsWith(TextValidateManager.formatGmail)) {
+        return TextValidateManager.invalidEmailFormat;
+      }
+      return TextValidateManager.invalidEmailOrPassword;
     }
     return null;
   }
 
   String? validateFullName(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return TextManager.invalidFullName;
+      return TextValidateManager.invalidFullName;
     }
     if (!fullNameRegExp.hasMatch(value.trim())) {
-      return TextManager.invalidFullName;
+      return TextValidateManager.invalidFullName;
     }
     return null;
   }
 
   String? validatePassword(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return TextManager.invalidEmailOrPassword;
+      return TextValidateManager.invalidEmailOrPassword;
     }
     if (!passwordLeastLowerCaseLetter.hasMatch(value)) {
-      return TextManager.passwordFromAtoZ;
+      return TextValidateManager.passwordFromAtoZ;
     }
     if (!passwordLeastOneCharacter.hasMatch(value)) {
-      return TextManager.passwordSpicailCharacter;
+      return TextValidateManager.passwordSpicailCharacter;
     }
     if (!passwordLeastDigit.hasMatch(value)) {
-      return TextManager.passwordLeastNumber;
+      return TextValidateManager.passwordLeastNumber;
     }
     if (!passwordLeastEightNumber.hasMatch(value)) {
-      return TextManager.passwordLeastAt8Number;
+      return TextValidateManager.passwordLeastAt8Number;
     }
     return null;
   }
 
   String? validateConfirmPassword(String? value, String originalPassword) {
     if (value == null || value.trim().isEmpty) {
-      return TextManager.invalidEmailOrPassword;
+      return TextValidateManager.invalidEmailOrPassword;
     }
     if (value != originalPassword) {
-      return TextManager.passwordsNotMatch;
+      return TextValidateManager.passwordsNotMatch;
     }
     return null;
   }
 
   String? validatePhone(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return TextManager.requiredPhone;
+      return TextValidateManager.requiredPhone;
     }
     final trimmedValue = value.trim();
     if (!phoneRegExp.hasMatch(trimmedValue)) {
-      return TextManager.invalidPhoneFormat;
+      return TextValidateManager.invalidPhoneFormat;
     }
     if (trimmedValue.length < 11) {
-      return TextManager.phoneTooShort;
+      return TextValidateManager.phoneTooShort;
     }
     return null;
   }
 
   String? validateEnterNumber(String? value) {
     if (value == null || value.isEmpty) {
-      return TextManager.fieldIsRequired;
+      return TextValidateManager.fieldIsRequired;
     }
     if (double.tryParse(value) == null) {
-      return TextManager.pleaseEnterNumber;
+      return TextValidateManager.pleaseEnterNumber;
     }
     return null;
   }
