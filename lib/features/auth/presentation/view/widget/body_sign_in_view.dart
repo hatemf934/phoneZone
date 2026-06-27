@@ -2,8 +2,10 @@ import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:phone_zone/core/utils/height_manager.dart';
 import 'package:phone_zone/core/utils/padding_manager.dart';
+import 'package:phone_zone/core/utils/route_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
+import 'package:phone_zone/features/auth/presentation/view/widget/account_action_row.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/custom_button.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/custom_text_button.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/custom_text_feild.dart';
@@ -60,6 +62,13 @@ class BodySignInView extends StatelessWidget {
               width: double.infinity,
               height: HeightManager.h55,
             ),
+          ),
+          SizedBox(height: HeightManager.h20),
+          AccountActionRow(
+            onTap: () =>
+                Navigator.pushReplacementNamed(context, RouteManager.signUp),
+            labelText: TextManager.createAccount,
+            actionText: TextManager.signUp,
           ),
           Spacer(flex: 2),
         ],

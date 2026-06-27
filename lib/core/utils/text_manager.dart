@@ -20,4 +20,6 @@ class TextManager {
   static const String forgetPassword = "Forgot Password?";
   static const String orContinue = "- OR Continue with -";
   static const String login = "Login";
+  static const String createAccount = 'Create An Account ';
+  static const String signUp = "Sign Up";
 }
