@@ -31,7 +31,7 @@ class BodySignUpView extends StatelessWidget {
           const Spacer(flex: 1),
           const TextFormFeildSignUpSection(),
           const SizedBox(height: HeightManager.h20),
-          const CustomButton(textButton: TextManager.createAccount),
+          CustomButton(textButton: TextManager.createAccount, onPressed: () {}),
           const SizedBox(height: HeightManager.h40),
           const OrContinueGoogleSection(),
           const SizedBox(height: HeightManager.h20),

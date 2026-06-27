@@ -5,12 +5,17 @@ import 'package:phone_zone/core/utils/raduis_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.textButton});
+  const CustomButton({
+    super.key,
+    required this.textButton,
+    required this.onPressed,
+  });
   final String textButton;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: ColorManager.primaryColor,
         foregroundColor: ColorManager.colorWhite,

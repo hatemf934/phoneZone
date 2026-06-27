@@ -29,4 +29,6 @@ class TextManager {
   static const String signUp = "Sign Up";
   static const String alreadyHaveAccount = "I Already Have an Account";
   static const String account = "account";
+  static const String searchHint = "what are you looking for";
+  static const String badgeOverflow = '99+';
 }

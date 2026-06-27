@@ -27,4 +27,10 @@ class Styles {
     fontFamily: FontFamilyManager.firaSans,
     color: ColorManager.colorWhite,
   );
+
+  static const TextStyle whiteBold = TextStyle(
+    color: ColorManager.colorWhite,
+    fontSize: FontSizeManager.font9,
+    fontWeight: FontWeight.bold,
+  );
 }

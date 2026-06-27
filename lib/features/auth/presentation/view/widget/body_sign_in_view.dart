@@ -37,7 +37,11 @@ class BodySignInView extends StatelessWidget {
             textButton: TextManager.forgetPassword,
           ),
           const SizedBox(height: HeightManager.h20),
-          const CustomButton(textButton: TextManager.login),
+          CustomButton(
+            textButton: TextManager.login,
+            onPressed: () =>
+                Navigator.pushReplacementNamed(context, RouteManager.homeView),
+          ),
           const SizedBox(height: HeightManager.h40),
           const OrContinueGoogleSection(),
           const SizedBox(height: HeightManager.h20),
