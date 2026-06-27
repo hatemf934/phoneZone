@@ -20,39 +20,43 @@ class BodySignInView extends StatelessWidget {
         vertical: PaddingManager.p16,
         horizontal: PaddingManager.p35,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Spacer(flex: 2),
-          const TitleAuthView(
-            textTitle1: TextManager.welcome,
-            textTitle2: TextManager.back,
-          ),
-          Spacer(flex: 1),
-          const TextFormFeildSignInSection(),
-          const SizedBox(height: HeightManager.h10),
-          CustomTextButton(
-            onTap: () {},
-            textButton: TextManager.forgetPassword,
-          ),
-          const SizedBox(height: HeightManager.h20),
-          CustomButton(
-            textButton: TextManager.login,
-            onPressed: () =>
-                Navigator.pushReplacementNamed(context, RouteManager.homeView),
-          ),
-          const SizedBox(height: HeightManager.h40),
-          const OrContinueGoogleSection(),
-          const SizedBox(height: HeightManager.h20),
-          AccountActionRow(
-            onTap: () =>
-                Navigator.pushReplacementNamed(context, RouteManager.signUp),
-            labelText: TextManager.createAccount,
-            actionText: TextManager.signUp,
-          ),
-          const Spacer(flex: 2),
-        ],
+      child: Form(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Spacer(flex: 2),
+            const TitleAuthView(
+              textTitle1: TextManager.welcome,
+              textTitle2: TextManager.back,
+            ),
+            Spacer(flex: 1),
+            const TextFormFeildSignInSection(),
+            const SizedBox(height: HeightManager.h10),
+            CustomTextButton(
+              onTap: () {},
+              textButton: TextManager.forgetPassword,
+            ),
+            const SizedBox(height: HeightManager.h20),
+            CustomButton(
+              textButton: TextManager.login,
+              onPressed: () => Navigator.pushReplacementNamed(
+                context,
+                RouteManager.homeView,
+              ),
+            ),
+            const SizedBox(height: HeightManager.h40),
+            const OrContinueGoogleSection(),
+            const SizedBox(height: HeightManager.h20),
+            AccountActionRow(
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, RouteManager.signUp),
+              labelText: TextManager.createAccount,
+              actionText: TextManager.signUp,
+            ),
+            const Spacer(flex: 2),
+          ],
+        ),
       ),
     );
   }

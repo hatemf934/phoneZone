@@ -10,6 +10,7 @@ class TextFormFeildSignUpSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: HeightManager.h20),
         CustomTextFeild(prefixIcon: Icons.email, hintText: TextManager.email),
         SizedBox(height: HeightManager.h20),
         CustomTextFeild(
@@ -25,12 +26,6 @@ class TextFormFeildSignUpSection extends StatelessWidget {
         CustomTextFeild(
           prefixIcon: Icons.lock_outline,
           hintText: TextManager.passWord,
-          obscureText: true,
-        ),
-        SizedBox(height: HeightManager.h20),
-        CustomTextFeild(
-          prefixIcon: Icons.lock_outline,
-          hintText: TextManager.confirmPassword,
           obscureText: true,
         ),
       ],

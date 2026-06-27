@@ -19,30 +19,35 @@ class BodySignUpView extends StatelessWidget {
         vertical: PaddingManager.p16,
         horizontal: PaddingManager.p35,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Spacer(flex: 2),
-          const TitleAuthView(
-            textTitle1: TextManager.createAn,
-            textTitle2: TextManager.account,
-          ),
-          const Spacer(flex: 1),
-          const TextFormFeildSignUpSection(),
-          const SizedBox(height: HeightManager.h20),
-          CustomButton(textButton: TextManager.createAccount, onPressed: () {}),
-          const SizedBox(height: HeightManager.h40),
-          const OrContinueGoogleSection(),
-          const SizedBox(height: HeightManager.h20),
-          AccountActionRow(
-            onTap: () =>
-                Navigator.pushReplacementNamed(context, RouteManager.signIn),
-            labelText: TextManager.alreadyHaveAccount,
-            actionText: TextManager.login,
-          ),
-          const Spacer(flex: 2),
-        ],
+      child: Form(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Spacer(flex: 2),
+            const TitleAuthView(
+              textTitle1: TextManager.createAn,
+              textTitle2: TextManager.account,
+            ),
+            const Spacer(flex: 1),
+            const TextFormFeildSignUpSection(),
+            const SizedBox(height: HeightManager.h20),
+            CustomButton(
+              textButton: TextManager.createAccount,
+              onPressed: () {},
+            ),
+            const SizedBox(height: HeightManager.h40),
+            const OrContinueGoogleSection(),
+            const SizedBox(height: HeightManager.h20),
+            AccountActionRow(
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, RouteManager.signIn),
+              labelText: TextManager.alreadyHaveAccount,
+              actionText: TextManager.login,
+            ),
+            const Spacer(flex: 2),
+          ],
+        ),
       ),
     );
   }
