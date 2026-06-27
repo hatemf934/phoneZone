@@ -1,14 +1,14 @@
 import 'package:phone_zone/core/api/end_point.dart';
 
 class SignInModel {
-  final String username;
-  final String password;
+  final String accessToken;
+  final String refreshToken;
 
-  SignInModel({required this.username, required this.password});
+  SignInModel({required this.accessToken, required this.refreshToken});
   factory SignInModel.fromJson(Map<String, dynamic> json) {
     return SignInModel(
-      username: json[ApiKey.username],
-      password: json[ApiKey.password],
+      accessToken: json[ApiKey.accessToken],
+      refreshToken: json[ApiKey.refreshToken],
     );
   }
 }
