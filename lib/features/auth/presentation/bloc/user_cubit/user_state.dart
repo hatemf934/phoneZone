@@ -21,11 +21,7 @@ final class SignInFaiure extends UserState {
 
 final class SignUpLoading extends UserState {}
 
-final class SignUpSuccess extends UserState {
-  final SignUpModel signUpModel;
-
-  SignUpSuccess({required this.signUpModel});
-}
+final class SignUpSuccess extends UserState {}
 
 final class SignUpFailure extends UserState {
   final Failure failure;

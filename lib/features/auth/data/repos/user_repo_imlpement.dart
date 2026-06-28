@@ -7,7 +7,6 @@ import 'package:phone_zone/core/error/failure.dart';
 import 'package:phone_zone/core/error/server_failure.dart';
 import 'package:phone_zone/core/helper/cache_helper.dart';
 import 'package:phone_zone/features/auth/data/model/sign_in_model.dart';
-import 'package:phone_zone/features/auth/data/model/sign_up_model.dart';
 import 'package:phone_zone/features/auth/data/repos/user_repo.dart';
 
 class UserRepoImlpement extends UserRepo {
@@ -39,14 +38,14 @@ class UserRepoImlpement extends UserRepo {
   }
 
   @override
-  Future<Either<Failure, SignUpModel>> signUp({
+  Future<Either<Failure, void>> signUp({
     required String email,
     required String password,
     required String phone,
     required String username,
   }) async {
     try {
-      final response = await dioClass.post(
+      await dioClass.post(
         EndPointClass.signup,
         data: {
           ApiKey.email: email,
@@ -55,7 +54,7 @@ class UserRepoImlpement extends UserRepo {
           ApiKey.password: password,
         },
       );
-      return right(SignUpModel.fromJson(response));
+      return right(null);
     } on DioException catch (e) {
       return left(ServerFailure.fromDioException(e));
     }

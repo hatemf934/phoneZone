@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:phone_zone/core/error/failure.dart';
 import 'package:phone_zone/features/auth/data/model/sign_in_model.dart';
-import 'package:phone_zone/features/auth/data/model/sign_up_model.dart';
 import 'package:phone_zone/features/auth/data/repos/user_repo_imlpement.dart';
 
 part 'user_state.dart';
@@ -33,7 +32,7 @@ class UserCubit extends Cubit<UserState> {
     );
     result.fold(
       (failure) => emit(SignUpFailure(failure: failure)),
-      (signUpModel) => emit(SignUpSuccess(signUpModel: signUpModel)),
+      (signUpModel) => emit(SignUpSuccess()),
     );
   }
 
