@@ -8,6 +8,8 @@ class CustomGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MasonryGridView.count(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       itemCount: 5,
       crossAxisCount: 2,
