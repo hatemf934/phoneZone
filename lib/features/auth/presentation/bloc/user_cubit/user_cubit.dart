@@ -2,6 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:phone_zone/core/error/failure.dart';
+import 'package:phone_zone/core/error/server_failure.dart';
+import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/features/auth/data/model/sign_in_model.dart';
 import 'package:phone_zone/features/auth/data/repos/user_repo_imlpement.dart';
 
@@ -11,6 +13,7 @@ class UserCubit extends Cubit<UserState> {
   UserCubit(this.userRepoImlpement) : super(UserInitial());
 
   final UserRepoImlpement userRepoImlpement;
+  final List<String> registeredEmails = [];
   GlobalKey<FormState> formSignInKey = GlobalKey();
   GlobalKey<FormState> formSignUpKey = GlobalKey();
 
@@ -24,16 +27,30 @@ class UserCubit extends Cubit<UserState> {
 
   Future<void> signUp() async {
     emit(SignUpLoading());
+    if (registeredEmails.contains(emailSignUp.text.trim().toLowerCase())) {
+      emit(
+        SignUpFailure(
+          failure: ServerFailure(
+            message: "",
+            userMessage: TextManager.emailAlreadyExists,
+          ),
+        ),
+      );
+      return;
+    }
     final result = await userRepoImlpement.signUp(
       email: emailSignUp.text,
       password: passwordSignUp.text,
-      phone: passwordSignUp.text,
+      phone: phoneSignUp.text,
       username: usernameSignUp.text,
     );
-    result.fold(
-      (failure) => emit(SignUpFailure(failure: failure)),
-      (signUpModel) => emit(SignUpSuccess()),
-    );
+    result.fold((failure) => emit(SignUpFailure(failure: failure)), (
+      signUpModel,
+    ) {
+      registeredEmails.add(emailSignUp.text.trim().toLowerCase());
+      clearSignUpFields();
+      emit(SignUpSuccess());
+    });
   }
 
   Future<void> signIn() async {
@@ -46,5 +63,17 @@ class UserCubit extends Cubit<UserState> {
       (failure) => emit(SignInFaiure(failure: failure)),
       (signInModel) => emit(SignInSuccess(signInModel: signInModel)),
     );
+  }
+
+  void clearSignUpFields() {
+    emailSignUp.clear();
+    passwordSignUp.clear();
+    phoneSignUp.clear();
+    usernameSignUp.clear();
+  }
+
+  void clearSignInFields() {
+    usernameSignIn.clear();
+    passwordSignIn.clear();
   }
 }

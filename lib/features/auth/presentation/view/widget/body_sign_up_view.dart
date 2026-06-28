@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:phone_zone/core/helper/custom_snakbar.dart';
 import 'package:phone_zone/core/utils/height_manager.dart';
 import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/route_manager.dart';
@@ -17,51 +18,62 @@ class BodySignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = context.read<UserCubit>().formSignUpKey;
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: PaddingManager.p16,
-          horizontal: PaddingManager.p35,
-        ),
-        child: Form(
-          key: formKey,
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(height: HeightManager.h20),
-                const TitleAuthView(
-                  textTitle1: TextManager.createAn,
-                  textTitle2: TextManager.account,
-                ),
-                const SizedBox(height: HeightManager.h20),
-                const TextFormFeildSignUpSection(),
-                const SizedBox(height: HeightManager.h20),
-                CustomButton(
-                  textButton: TextManager.createAccount,
-                  onPressed: () {
-                    if (formKey.currentState!.validate()) {
+    return BlocListener<UserCubit, UserState>(
+      listener: (context, state) {
+        if (state is SignUpSuccess) {
+          CustomSnackBar.showSuccess(context);
+          Navigator.pushReplacementNamed(context, RouteManager.signIn);
+        }
+        if (state is SignUpFailure) {
+          CustomSnackBar.showError(context, message: state.failure.userMessage);
+        }
+      },
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: PaddingManager.p16,
+            horizontal: PaddingManager.p35,
+          ),
+          child: Form(
+            key: formKey,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: HeightManager.h20),
+                  const TitleAuthView(
+                    textTitle1: TextManager.createAn,
+                    textTitle2: TextManager.account,
+                  ),
+                  const SizedBox(height: HeightManager.h20),
+                  const TextFormFeildSignUpSection(),
+                  const SizedBox(height: HeightManager.h20),
+                  CustomButton(
+                    textButton: TextManager.createAccount,
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        context.read<UserCubit>().signUp();
+                      }
+                    },
+                  ),
+                  const SizedBox(height: HeightManager.h20),
+                  const OrContinueGoogleSection(),
+                  const SizedBox(height: HeightManager.h20),
+                  AccountActionRow(
+                    onTap: () {
+                      context.read<UserCubit>().clearSignUpFields();
                       Navigator.pushReplacementNamed(
                         context,
-                        RouteManager.homeView,
+                        RouteManager.signIn,
                       );
-                    }
-                  },
-                ),
-                const SizedBox(height: HeightManager.h20),
-                const OrContinueGoogleSection(),
-                const SizedBox(height: HeightManager.h20),
-                AccountActionRow(
-                  onTap: () => Navigator.pushReplacementNamed(
-                    context,
-                    RouteManager.signIn,
+                    },
+                    labelText: TextManager.alreadyHaveAccount,
+                    actionText: TextManager.login,
                   ),
-                  labelText: TextManager.alreadyHaveAccount,
-                  actionText: TextManager.login,
-                ),
-                const SizedBox(height: HeightManager.h40),
-              ],
+                  const SizedBox(height: HeightManager.h40),
+                ],
+              ),
             ),
           ),
         ),

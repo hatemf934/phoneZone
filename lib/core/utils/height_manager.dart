@@ -5,6 +5,7 @@ class HeightManager {
   static const double h10 = 10;
   static const double h16 = 16;
   static const double h20 = 20;
+  static const double h30 = 30;
   static const double h35 = 35;
   static const double h40 = 40;
   static const double h45 = 45;

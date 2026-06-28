@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:phone_zone/core/helper/custom_snakbar.dart';
 import 'package:phone_zone/core/utils/height_manager.dart';
 import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/route_manager.dart';
@@ -18,56 +19,66 @@ class BodySignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formkey = context.read<UserCubit>().formSignInKey;
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: PaddingManager.p16,
-          horizontal: PaddingManager.p35,
-        ),
-        child: Form(
-          key: formkey,
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(height: HeightManager.h55),
-                const TitleAuthView(
-                  textTitle1: TextManager.welcome,
-                  textTitle2: TextManager.back,
-                ),
-                const SizedBox(height: HeightManager.h40),
-                const TextFormFeildSignInSection(),
-                const SizedBox(height: HeightManager.h10),
-                CustomTextButton(
-                  onTap: () {},
-                  textButton: TextManager.forgetPassword,
-                ),
-                const SizedBox(height: HeightManager.h10),
-                CustomButton(
-                  textButton: TextManager.login,
-                  onPressed: () {
-                    if (formkey.currentState!.validate()) {
+    return BlocListener<UserCubit, UserState>(
+      listener: (context, state) {
+        if (state is SignInSuccess) {
+          Navigator.pushReplacementNamed(context, RouteManager.homeView);
+        }
+        if (state is SignInFaiure) {
+          CustomSnackBar.showError(context, message: state.failure.userMessage);
+        }
+      },
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: PaddingManager.p16,
+            horizontal: PaddingManager.p35,
+          ),
+          child: Form(
+            key: formkey,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(height: HeightManager.h55),
+                  const TitleAuthView(
+                    textTitle1: TextManager.welcome,
+                    textTitle2: TextManager.back,
+                  ),
+                  const SizedBox(height: HeightManager.h40),
+                  const TextFormFeildSignInSection(),
+                  const SizedBox(height: HeightManager.h10),
+                  CustomTextButton(
+                    onTap: () {},
+                    textButton: TextManager.forgetPassword,
+                  ),
+                  const SizedBox(height: HeightManager.h10),
+                  CustomButton(
+                    textButton: TextManager.login,
+                    onPressed: () {
+                      if (formkey.currentState!.validate()) {
+                        context.read<UserCubit>().signIn();
+                      }
+                    },
+                  ),
+                  const SizedBox(height: HeightManager.h20),
+                  const OrContinueGoogleSection(),
+                  const SizedBox(height: HeightManager.h20),
+                  AccountActionRow(
+                    onTap: () {
+                      context.read<UserCubit>().clearSignInFields();
                       Navigator.pushReplacementNamed(
                         context,
-                        RouteManager.homeView,
+                        RouteManager.signUp,
                       );
-                    }
-                  },
-                ),
-                const SizedBox(height: HeightManager.h20),
-                const OrContinueGoogleSection(),
-                const SizedBox(height: HeightManager.h20),
-                AccountActionRow(
-                  onTap: () => Navigator.pushReplacementNamed(
-                    context,
-                    RouteManager.signUp,
+                    },
+                    labelText: TextManager.createAccount,
+                    actionText: TextManager.signUp,
                   ),
-                  labelText: TextManager.createAccount,
-                  actionText: TextManager.signUp,
-                ),
-                const SizedBox(height: HeightManager.h40),
-              ],
+                  const SizedBox(height: HeightManager.h40),
+                ],
+              ),
             ),
           ),
         ),
