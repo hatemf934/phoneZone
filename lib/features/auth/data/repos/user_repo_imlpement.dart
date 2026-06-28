@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:phone_zone/core/api/dio_class.dart';
 import 'package:phone_zone/core/api/end_point.dart';
@@ -15,13 +16,13 @@ class UserRepoImlpement extends UserRepo {
   UserRepoImlpement({required this.dioClass});
   @override
   Future<Either<Failure, SignInModel>> signIn({
+    required String email,
     required String password,
-    required String username,
   }) async {
     try {
       final response = await dioClass.post(
         EndPointClass.signin,
-        data: {ApiKey.username: username, ApiKey.password: password},
+        data: {ApiKey.email: email, ApiKey.password: password},
       );
       SignInModel user = SignInModel.fromJson(response);
       CacheHelper().saveData(key: ApiKey.accessToken, value: user.accessToken);
@@ -41,15 +42,15 @@ class UserRepoImlpement extends UserRepo {
   Future<Either<Failure, void>> signUp({
     required String email,
     required String password,
-    required String phone,
     required String username,
+    XFile? avatar,
   }) async {
     try {
       await dioClass.post(
         EndPointClass.signup,
         data: {
           ApiKey.email: email,
-          ApiKey.phone: phone,
+          ApiKey.avatar: avatar,
           ApiKey.username: username,
           ApiKey.password: password,
         },

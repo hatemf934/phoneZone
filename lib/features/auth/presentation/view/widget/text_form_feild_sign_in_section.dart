@@ -15,22 +15,23 @@ class TextFormFeildSignInSection extends StatelessWidget {
     return Column(
       children: [
         CustomTextFeild(
-          controller: context.read<UserCubit>().usernameSignIn,
-          hintText: TextManager.userName,
-          prefixIcon: Icons.person_rounded,
-          validator: (value) {
-            if (value == null || value.trim().isEmpty) {
-              return TextValidateManager.usernameIsRequired;
-            }
-            return null;
-          },
+          controller: context.read<UserCubit>().emailSignIn,
+          hintText: TextManager.email,
+          prefixIcon: Icons.email,
+          validator: (value) => FormValidate().validateRequired(
+            value,
+            message: TextValidateManager.emailIsRequired,
+          ),
         ),
         SizedBox(height: HeightManager.h20),
         CustomTextFeild(
           controller: context.read<UserCubit>().passwordSignIn,
           prefixIcon: Icons.lock_rounded,
           hintText: TextManager.passWord,
-          validator: (value) => FormValidate().validatePassword(value),
+          validator: (value) => FormValidate().validateRequired(
+            value,
+            message: TextValidateManager.passwordIsRequired,
+          ),
           obscureText: true,
         ),
       ],

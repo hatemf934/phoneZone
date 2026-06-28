@@ -26,19 +26,10 @@ class TextFormFeildSignUpSection extends StatelessWidget {
           controller: context.read<UserCubit>().usernameSignUp,
           hintText: TextManager.userName,
           prefixIcon: Icons.person_rounded,
-          validator: (value) {
-            if (value == null || value.trim().isEmpty) {
-              return TextValidateManager.usernameIsRequired;
-            }
-            return null;
-          },
-        ),
-        SizedBox(height: HeightManager.h20),
-        CustomTextFeild(
-          controller: context.read<UserCubit>().phoneSignUp,
-          hintText: TextManager.phoneNumber,
-          prefixIcon: Icons.phone_rounded,
-          validator: (value) => FormValidate().validatePhone(value),
+          validator: (value) => FormValidate().validateRequired(
+            value,
+            message: TextValidateManager.usernameIsRequired,
+          ),
         ),
         SizedBox(height: HeightManager.h20),
         CustomTextFeild(

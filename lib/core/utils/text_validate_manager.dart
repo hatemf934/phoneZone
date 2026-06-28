@@ -11,6 +11,8 @@ class TextValidateManager {
 
   static const String fieldIsRequired = "This field is required";
   static const String usernameIsRequired = "Username is required";
+  static const String emailIsRequired = 'Please enter your email';
+  static const String passwordIsRequired = 'Please enter your password';
   static const String invalidEmailOrPassword = "Invalid email or password";
   static const String passwordFromAtoZ =
       "At least one lowercase letter required";

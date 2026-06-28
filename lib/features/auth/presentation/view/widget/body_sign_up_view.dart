@@ -7,10 +7,10 @@ import 'package:phone_zone/core/utils/route_manager.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/features/auth/presentation/bloc/user_cubit/user_cubit.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/account_action_row.dart';
+import 'package:phone_zone/features/auth/presentation/view/widget/avatar_and_title_row.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/custom_button.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/or_continue_google_section.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/text_form_feild_sign_up_section.dart';
-import 'package:phone_zone/features/auth/presentation/view/widget/title_auth_view.dart';
 
 class BodySignUpView extends StatelessWidget {
   const BodySignUpView({super.key});
@@ -39,14 +39,10 @@ class BodySignUpView extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(height: HeightManager.h20),
-                  const TitleAuthView(
-                    textTitle1: TextManager.createAn,
-                    textTitle2: TextManager.account,
-                  ),
-                  const SizedBox(height: HeightManager.h20),
+                  const AvatarAndTitleRow(),
+                  const SizedBox(height: HeightManager.h40),
                   const TextFormFeildSignUpSection(),
                   const SizedBox(height: HeightManager.h20),
                   CustomButton(

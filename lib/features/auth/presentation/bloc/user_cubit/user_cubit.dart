@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:meta/meta.dart';
 import 'package:phone_zone/core/error/failure.dart';
 import 'package:phone_zone/core/error/server_failure.dart';
@@ -16,14 +17,20 @@ class UserCubit extends Cubit<UserState> {
   final List<String> registeredEmails = [];
   GlobalKey<FormState> formSignInKey = GlobalKey();
   GlobalKey<FormState> formSignUpKey = GlobalKey();
+  XFile? profilePic;
 
-  TextEditingController usernameSignIn = TextEditingController();
+  TextEditingController emailSignIn = TextEditingController();
   TextEditingController passwordSignIn = TextEditingController();
 
   TextEditingController emailSignUp = TextEditingController();
   TextEditingController passwordSignUp = TextEditingController();
   TextEditingController usernameSignUp = TextEditingController();
   TextEditingController phoneSignUp = TextEditingController();
+
+  void upLoadProfilePic(XFile image) {
+    profilePic = image;
+    emit(UpLoadProfilePic());
+  }
 
   Future<void> signUp() async {
     emit(SignUpLoading());
@@ -41,8 +48,8 @@ class UserCubit extends Cubit<UserState> {
     final result = await userRepoImlpement.signUp(
       email: emailSignUp.text,
       password: passwordSignUp.text,
-      phone: phoneSignUp.text,
       username: usernameSignUp.text,
+      avatar: profilePic,
     );
     result.fold((failure) => emit(SignUpFailure(failure: failure)), (
       signUpModel,
@@ -57,7 +64,7 @@ class UserCubit extends Cubit<UserState> {
     emit(SignInLoading());
     final result = await userRepoImlpement.signIn(
       password: passwordSignIn.text,
-      username: usernameSignIn.text,
+      email: emailSignIn.text,
     );
     result.fold(
       (failure) => emit(SignInFaiure(failure: failure)),
@@ -68,12 +75,11 @@ class UserCubit extends Cubit<UserState> {
   void clearSignUpFields() {
     emailSignUp.clear();
     passwordSignUp.clear();
-    phoneSignUp.clear();
     usernameSignUp.clear();
   }
 
   void clearSignInFields() {
-    usernameSignIn.clear();
+    emailSignIn.clear();
     passwordSignIn.clear();
   }
 }

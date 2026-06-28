@@ -17,6 +17,13 @@ class FormValidate {
   );
   final RegExp phoneRegExp = RegExp(TextValidateManager.phoneFormat);
 
+  String? validateRequired(String? value, {String? message}) {
+    if (value == null || value.trim().isEmpty) {
+      return message ?? TextValidateManager.fieldIsRequired;
+    }
+    return null;
+  }
+
   String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) {
       return TextValidateManager.invalidEmailOrPassword;

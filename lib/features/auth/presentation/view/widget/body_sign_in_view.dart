@@ -39,7 +39,6 @@ class BodySignInView extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(height: HeightManager.h55),
                   const TitleAuthView(
