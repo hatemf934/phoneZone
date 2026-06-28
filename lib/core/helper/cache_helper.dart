@@ -25,9 +25,11 @@ class CacheHelper {
 
     if (value is int) {
       return await sharedPreferences.setInt(key, value);
-    } else {
-      return await sharedPreferences.setDouble(key, value);
     }
+    if (value is double) {
+      return await sharedPreferences.setInt(key, value.toInt());
+    }
+    return false;
   }
 
   //! this method to get data already saved in local database
