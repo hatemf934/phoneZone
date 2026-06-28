@@ -1,9 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:meta/meta.dart';
 import 'package:phone_zone/core/error/failure.dart';
-import 'package:phone_zone/core/error/server_failure.dart';
+import 'package:phone_zone/core/error/server_failure.dart' show ServerFailure;
 import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/features/auth/data/model/sign_in_model.dart';
 import 'package:phone_zone/features/auth/data/repos/user_repo_imlpement.dart';
@@ -17,7 +16,6 @@ class UserCubit extends Cubit<UserState> {
   final List<String> registeredEmails = [];
   GlobalKey<FormState> formSignInKey = GlobalKey();
   GlobalKey<FormState> formSignUpKey = GlobalKey();
-  XFile? profilePic;
 
   TextEditingController emailSignIn = TextEditingController();
   TextEditingController passwordSignIn = TextEditingController();
@@ -26,11 +24,6 @@ class UserCubit extends Cubit<UserState> {
   TextEditingController passwordSignUp = TextEditingController();
   TextEditingController usernameSignUp = TextEditingController();
   TextEditingController phoneSignUp = TextEditingController();
-
-  void upLoadProfilePic(XFile image) {
-    profilePic = image;
-    emit(UpLoadProfilePic());
-  }
 
   Future<void> signUp() async {
     emit(SignUpLoading());
@@ -49,7 +42,6 @@ class UserCubit extends Cubit<UserState> {
       email: emailSignUp.text,
       password: passwordSignUp.text,
       username: usernameSignUp.text,
-      avatar: profilePic,
     );
     result.fold((failure) => emit(SignUpFailure(failure: failure)), (
       signUpModel,
@@ -63,8 +55,8 @@ class UserCubit extends Cubit<UserState> {
   Future<void> signIn() async {
     emit(SignInLoading());
     final result = await userRepoImlpement.signIn(
-      password: passwordSignIn.text,
       email: emailSignIn.text,
+      password: passwordSignIn.text,
     );
     result.fold(
       (failure) => emit(SignInFaiure(failure: failure)),

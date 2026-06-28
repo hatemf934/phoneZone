@@ -54,9 +54,6 @@ class FormValidate {
     if (!passwordLeastLowerCaseLetter.hasMatch(value)) {
       return TextValidateManager.passwordFromAtoZ;
     }
-    if (!passwordLeastOneCharacter.hasMatch(value)) {
-      return TextValidateManager.passwordSpicailCharacter;
-    }
     if (!passwordLeastDigit.hasMatch(value)) {
       return TextValidateManager.passwordLeastNumber;
     }

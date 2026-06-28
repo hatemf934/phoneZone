@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:phone_zone/core/api/dio_class.dart';
 import 'package:phone_zone/core/api/end_point.dart';
@@ -43,16 +42,15 @@ class UserRepoImlpement extends UserRepo {
     required String email,
     required String password,
     required String username,
-    XFile? avatar,
   }) async {
     try {
       await dioClass.post(
         EndPointClass.signup,
         data: {
           ApiKey.email: email,
-          ApiKey.avatar: avatar,
-          ApiKey.username: username,
+          ApiKey.name: username,
           ApiKey.password: password,
+          ApiKey.avatar: 'https://i.imgur.com/QJaexge.jpeg',
         },
       );
       return right(null);

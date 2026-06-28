@@ -52,9 +52,15 @@ class ServerFailure extends Failure {
   }
 
   static ServerFailure _handleBadResponse(int? statusCode, dynamic data) {
-    final serverMessage = (data is Map<String, dynamic>)
-        ? data['ErrorMessage'] ?? data['message'] ?? data['error']
-        : null;
+    String? serverMessage;
+    if (data is Map<String, dynamic>) {
+      final msg = data['message'] ?? data['ErrorMessage'] ?? data['error'];
+      if (msg is List) {
+        serverMessage = msg.first as String;
+      } else if (msg is String) {
+        serverMessage = msg;
+      }
+    }
     return switch (statusCode) {
       400 => ServerFailure(
         message: "Bad request. statusCode: 400",

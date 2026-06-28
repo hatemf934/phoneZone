@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:phone_zone/core/api/api_class.dart';
+import 'package:phone_zone/core/api/api_interceptors.dart';
 import 'package:phone_zone/core/api/end_point.dart';
 
 class DioClass extends ApiClass {
@@ -7,6 +8,7 @@ class DioClass extends ApiClass {
 
   DioClass({required this.dio}) {
     dio.options.baseUrl = EndPointClass.baseUrl;
+    dio.interceptors.add(ApiInterceptors());
     dio.interceptors.add(
       LogInterceptor(
         request: true,
