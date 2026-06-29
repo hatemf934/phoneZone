@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phone_zone/core/utils/color_manager.dart';
 import 'package:phone_zone/core/utils/raduis_manager.dart';
+import 'package:phone_zone/features/home/presentation/view/product_view.dart';
 import 'package:phone_zone/features/home/presentation/view/widgets/info_section_card.dart';
 
 class ProductCard extends StatelessWidget {
@@ -9,7 +10,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Navigator.pushNamed(context, ProductView.id),
       child: Container(
         decoration: BoxDecoration(
           color: ColorManager.colorWhite,

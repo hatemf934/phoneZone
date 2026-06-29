@@ -3,6 +3,7 @@ import 'package:phone_zone/core/utils/route_manager.dart';
 import 'package:phone_zone/features/auth/presentation/view/sign_in_view.dart';
 import 'package:phone_zone/features/auth/presentation/view/sign_up_view.dart';
 import 'package:phone_zone/features/home/presentation/view/home_view.dart';
+import 'package:phone_zone/features/home/presentation/view/product_view.dart';
 import 'package:phone_zone/features/splash/presentation/view/splash_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
@@ -15,6 +16,8 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(builder: (context) => const SignInView());
     case RouteManager.signUp:
       return MaterialPageRoute(builder: (context) => const SignUpView());
+    case RouteManager.productView:
+      return MaterialPageRoute(builder: (context) => const ProductView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }

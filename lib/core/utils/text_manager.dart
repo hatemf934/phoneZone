@@ -39,6 +39,8 @@ class TextManager {
   static const String sectionAllFeatured = 'All Featured';
   static const String sectionSortButton = 'Sort';
   static const String productCurrencySymbol = '₹';
+  static const String addToCart = 'Add to Cart';
+  static const String added = 'Added!';
   static const String accountSuccess = "Account created successfully!";
   static const String emailAlreadyExists =
       "This email already exists, please sign in.";

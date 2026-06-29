@@ -6,6 +6,7 @@ import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/route_manager.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/features/auth/presentation/bloc/user_cubit/user_cubit.dart';
+import 'package:phone_zone/features/auth/presentation/view/sign_in_view.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/account_action_row.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/custom_button.dart';
 import 'package:phone_zone/features/auth/presentation/view/widget/or_continue_google_section.dart';
@@ -62,10 +63,7 @@ class BodySignUpView extends StatelessWidget {
                   AccountActionRow(
                     onTap: () {
                       context.read<UserCubit>().clearSignUpFields();
-                      Navigator.pushReplacementNamed(
-                        context,
-                        RouteManager.signIn,
-                      );
+                      Navigator.pushReplacementNamed(context, SignInView.id);
                     },
                     labelText: TextManager.alreadyHaveAccount,
                     actionText: TextManager.login,

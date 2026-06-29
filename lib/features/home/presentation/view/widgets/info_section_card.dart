@@ -35,7 +35,7 @@ class InfoSection extends StatelessWidget {
             style: Styles.styleGrey.copyWith(fontSize: FontSizeManager.font11),
           ),
           const SizedBox(height: HeightManager.h6),
-          const RatingSection(),
+          const RatingSection(textStyle: Styles.styleBlck87),
           const SizedBox(height: HeightManager.h3),
           const AddProductToCardSection(),
         ],

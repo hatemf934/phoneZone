@@ -16,4 +16,6 @@ class ColorManager {
   static const Color badgeText = Color(0xFF9B9BB8);
   static const Color sortButtonBorder = Color(0xFFDDDDDD);
   static const Color ratingColor = Color(0xffedb310);
+  static const Color lightGreen = Colors.lightGreen;
+  static const Color colorGreen = Colors.green;
 }
