@@ -6,17 +6,18 @@ import 'package:phone_zone/core/utils/raduis_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/core/utils/width_manager.dart';
+import 'package:phone_zone/features/home/data/model/phone_model.dart';
 
 class AddProductToCardSection extends StatelessWidget {
-  const AddProductToCardSection({super.key});
-
+  const AddProductToCardSection({super.key, required this.phoneModel});
+  final PhoneModel phoneModel;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          '${TextManager.productCurrencySymbol}${300.toStringAsFixed(0)}',
+          '${TextManager.productCurrencySymbol}${phoneModel.price.toStringAsFixed(0)}',
           style: Styles.styleBlck87.copyWith(
             fontSize: FontSizeManager.font18,
             color: Colors.lightGreen,
