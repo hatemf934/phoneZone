@@ -7,7 +7,7 @@ class DioClass extends ApiClass {
   final Dio dio;
 
   DioClass({required this.dio}) {
-    dio.options.baseUrl = EndPointClass.baseUrl;
+    dio.options.baseUrl = EndPointClass.userbaseUrl;
     dio.interceptors.add(ApiInterceptors());
     dio.interceptors.add(
       LogInterceptor(
