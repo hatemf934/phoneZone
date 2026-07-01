@@ -51,10 +51,7 @@ class _SplashViewState extends State<SplashView> {
 
   void durationNav() {
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const OnBoardingView()),
-      );
+      Navigator.pushReplacementNamed(context, OnBoardingView.id);
     });
   }
 }

@@ -9,4 +9,5 @@ class FontSizeManager {
   static const double font20 = 20;
   static const double font24 = 24;
   static const double font34 = 34;
+  static const double font65 = 65;
 }

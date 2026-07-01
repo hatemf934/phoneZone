@@ -18,4 +18,6 @@ class ColorManager {
   static const Color ratingColor = Color(0xffedb310);
   static const Color lightGreen = Colors.lightGreen;
   static const Color colorGreen = Colors.green;
+  static Color shimmerBase = Colors.grey.shade300;
+  static Color shimmerHighlight = Colors.grey.shade100;
 }
