@@ -40,8 +40,8 @@ class CustomCachedImage extends StatelessWidget {
         height: heightImage,
         fit: BoxFit.fitHeight,
         placeholder: (context, url) => Shimmer.fromColors(
-          baseColor: ColorManager.colorGrey300,
-          highlightColor: ColorManager.colorGrey100,
+          baseColor: ColorManager.baseColor,
+          highlightColor: ColorManager.highlightColor,
           child: Container(
             color: ColorManager.colorGrey300,
             height: heightImage ?? HeightManager.h185,

@@ -51,4 +51,8 @@ class TextManager {
   static const String discountedTotal = "Discounted Total";
   static const String items = "items";
   static const String offDiscount = "% OFF";
+  static const String width = "Width";
+  static const String height = "Height";
+  static const String depth = "Depth";
+  static const String cmText = "cm";
 }

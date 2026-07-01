@@ -18,6 +18,8 @@ class ColorManager {
   static const Color ratingColor = Color(0xffedb310);
   static const Color pinkColor = Color(0xFFFFEBEE);
   static const Color colorGreen = Colors.green;
+  static const Color baseColor = Color(0xFFEBEBF4);
+  static const Color highlightColor = Color(0xFFF4F4F4);
   static Color colorGrey300 = Colors.grey.shade300;
   static Color colorGrey100 = Colors.grey.shade100;
   static Color colorGrey50 = Colors.grey.shade50;

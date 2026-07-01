@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/width_manager.dart';
 import 'package:phone_zone/features/home/presentation/view/widgets/icon_button_app_bar.dart';
 import 'package:phone_zone/features/home/presentation/view/widgets/search_app_bar.dart';
@@ -21,22 +22,25 @@ class ShopTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(child: SearchAppBar(onChanged: onSearchChanged)),
-        const SizedBox(width: WidthManager.w8),
-        IconButtonAppBar(
-          icon: Icons.shopping_cart_outlined,
-          badgeCount: cartItemCount,
-          onTap: onCartTap,
-        ),
-        const SizedBox(width: WidthManager.w4),
-        IconButtonAppBar(
-          icon: Icons.notifications_outlined,
-          showDot: hasUnreadNotification,
-          onTap: onNotificationTap,
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: PaddingManager.p10),
+      child: Row(
+        children: [
+          Expanded(child: SearchAppBar(onChanged: onSearchChanged)),
+          const SizedBox(width: WidthManager.w8),
+          IconButtonAppBar(
+            icon: Icons.shopping_cart_outlined,
+            badgeCount: cartItemCount,
+            onTap: onCartTap,
+          ),
+          const SizedBox(width: WidthManager.w4),
+          IconButtonAppBar(
+            icon: Icons.notifications_outlined,
+            showDot: hasUnreadNotification,
+            onTap: onNotificationTap,
+          ),
+        ],
+      ),
     );
   }
 }

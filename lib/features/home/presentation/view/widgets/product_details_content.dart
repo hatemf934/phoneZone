@@ -21,7 +21,7 @@ class ProductDetailsContent extends StatelessWidget {
           hasColor: false,
         ),
         const SizedBox(height: HeightManager.h10),
-        RowRatingProductView(phoneModel: phoneModel),
+        RatingProductView(phoneModel: phoneModel),
         const SizedBox(height: HeightManager.h10),
         RowTextPriceWidget(phoneModel: phoneModel),
         const SizedBox(height: HeightManager.h10),
@@ -33,7 +33,7 @@ class ProductDetailsContent extends StatelessWidget {
           ),
         ),
         const SizedBox(height: HeightManager.h10),
-        const OrderDetails(),
+        OrderDetails(phoneModel: phoneModel),
       ],
     );
   }

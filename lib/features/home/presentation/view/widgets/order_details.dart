@@ -7,10 +7,11 @@ import 'package:phone_zone/core/utils/raduis_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/core/utils/width_manager.dart';
+import 'package:phone_zone/features/home/data/model/phone_model.dart';
 
 class OrderDetails extends StatelessWidget {
-  const OrderDetails({super.key});
-
+  const OrderDetails({super.key, required this.phoneModel});
+  final PhoneModel phoneModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,32 +42,25 @@ class OrderDetails extends StatelessWidget {
           ),
           const Divider(height: HeightManager.h30, thickness: 1),
           buildDetailRow(
-            TextManager.quantitySelected,
-            "${2}${TextManager.items}",
+            TextManager.width,
+            "${phoneModel.dimension.width} ${TextManager.cmText}",
           ),
           const SizedBox(height: HeightManager.h8),
           buildDetailRow(
-            TextManager.originalTotal,
-            "\$${44.34.toStringAsFixed(2)}",
+            TextManager.height,
+            "${phoneModel.dimension.height} ${TextManager.cmText}",
           ),
           const SizedBox(height: HeightManager.h8),
           buildDetailRow(
-            TextManager.discountedTotal,
-            "\$${23.43.toStringAsFixed(2)}",
-            valueColor: ColorManager.colorGreen,
-            valueBold: true,
+            TextManager.depth,
+            "${phoneModel.dimension.depth} ${TextManager.cmText}",
           ),
         ],
       ),
     );
   }
 
-  Widget buildDetailRow(
-    String label,
-    String value, {
-    Color? valueColor,
-    bool valueBold = false,
-  }) {
+  Widget buildDetailRow(String label, String value) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -81,8 +75,8 @@ class OrderDetails extends StatelessWidget {
           value,
           style: TextStyle(
             fontSize: FontSizeManager.font14,
-            fontWeight: valueBold ? FontWeight.bold : FontWeight.w600,
-            color: valueColor ?? ColorManager.badgeBackground,
+            fontWeight: FontWeight.bold,
+            color: ColorManager.badgeBackground,
           ),
         ),
       ],

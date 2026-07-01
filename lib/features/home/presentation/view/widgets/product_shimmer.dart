@@ -18,8 +18,8 @@ class ProductCardShimmer extends StatelessWidget {
         borderRadius: BorderRadius.circular(RaduisManager.r10),
       ),
       child: Shimmer.fromColors(
-        baseColor: ColorManager.colorGrey300,
-        highlightColor: ColorManager.colorGrey100,
+        baseColor: ColorManager.baseColor,
+        highlightColor: ColorManager.highlightColor,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

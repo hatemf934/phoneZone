@@ -4,6 +4,7 @@ import 'package:phone_zone/core/widgets/error_view.dart';
 import 'package:phone_zone/features/home/data/model/phone_model.dart';
 import 'package:phone_zone/features/home/presentation/bloc/phone_details/phone_details_cubit.dart';
 import 'package:phone_zone/features/home/presentation/view/widgets/product_details_content.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/product_details_shimmer.dart';
 
 class BuilderBodyProductDetails extends StatelessWidget {
   const BuilderBodyProductDetails({super.key, required this.phoneModel});
@@ -13,7 +14,7 @@ class BuilderBodyProductDetails extends StatelessWidget {
     return BlocBuilder<PhoneDetailsCubit, PhoneDetailsState>(
       builder: (context, state) {
         if (state is PhoneDetailLoading) {
-          return Center(child: CircularProgressIndicator());
+          return ProductDetailsShimmer();
         } else if (state is PhoneDetailFailure) {
           return ErrorView(
             failure: state.failure,

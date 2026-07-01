@@ -11,7 +11,12 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BodyProductView(phoneModel: phoneModel),
+      body: Container(
+        constraints: BoxConstraints(
+          minHeight: MediaQuery.of(context).size.height,
+        ),
+        child: BodyProductView(phoneModel: phoneModel),
+      ),
       bottomNavigationBar: const ProductActionRow(),
     );
   }
