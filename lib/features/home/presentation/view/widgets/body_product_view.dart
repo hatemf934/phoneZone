@@ -34,9 +34,10 @@ class BodyProductView extends StatelessWidget {
               const SizedBox(height: HeightManager.h30),
               const CustomBackArrow(),
               CustomCachedImage(
-                heightImage: 300,
+                heightImage: HeightManager.h300,
                 imageUrl:
                     "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp",
+                hasColor: false,
               ),
               const SizedBox(height: HeightManager.h10),
               const RowRatingProductView(),

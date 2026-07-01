@@ -14,4 +14,6 @@ class HeightManager {
   static const double h50 = 50;
   static const double h150 = 150;
   static const double h120 = 120;
+  static const double h185 = 185;
+  static const double h300 = 300;
 }
