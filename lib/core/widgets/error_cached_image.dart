@@ -8,7 +8,7 @@ class ErrorCachedImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: ColorManager.shimmerBase,
+      color: ColorManager.colorGrey300,
       child: const Icon(Icons.broken_image, color: ColorManager.colorGrey),
     );
   }

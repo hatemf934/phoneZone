@@ -45,4 +45,10 @@ class TextManager {
   static const String accountSuccess = "Account created successfully!";
   static const String emailAlreadyExists =
       "This email already exists, please sign in.";
+  static const String orderDetails = "Order Details";
+  static const String quantitySelected = "Quantity Selected";
+  static const String originalTotal = "Original Total";
+  static const String discountedTotal = "Discounted Total";
+  static const String items = "items";
+  static const String offDiscount = "% OFF";
 }

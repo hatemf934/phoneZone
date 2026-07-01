@@ -37,4 +37,3 @@ class ProductCard extends StatelessWidget {
     );
   }
 }
-//  "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp",

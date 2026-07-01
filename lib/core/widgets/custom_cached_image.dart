@@ -5,9 +5,14 @@ import 'package:phone_zone/core/widgets/error_cached_image.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CustomCachedImage extends StatelessWidget {
-  const CustomCachedImage({super.key, required this.imageUrl});
+  const CustomCachedImage({
+    super.key,
+    required this.imageUrl,
+    this.heightImage,
+  });
 
   final String? imageUrl;
+  final double? heightImage;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +23,12 @@ class CustomCachedImage extends StatelessWidget {
       child: CachedNetworkImage(
         imageUrl: imageUrl!,
         width: double.infinity,
-        fit: BoxFit.cover,
+        height: heightImage,
+        fit: BoxFit.fitHeight,
         placeholder: (context, url) => Shimmer.fromColors(
-          baseColor: ColorManager.shimmerBase,
-          highlightColor: ColorManager.shimmerHighlight,
-          child: Container(color: ColorManager.shimmerBase, height: 185),
+          baseColor: ColorManager.colorGrey300,
+          highlightColor: ColorManager.colorGrey100,
+          child: Container(color: ColorManager.colorGrey300, height: 185),
         ),
         errorWidget: (context, url, error) => const ErrorCachedImage(),
       ),

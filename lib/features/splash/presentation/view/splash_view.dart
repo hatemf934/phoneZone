@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:phone_zone/core/utils/color_manager.dart';
 import 'package:phone_zone/core/utils/route_manager.dart';
+import 'package:phone_zone/features/home/presentation/view/home_view.dart';
 import 'package:phone_zone/features/onboarding/presentation/view/on_boarding_view.dart';
 import 'package:phone_zone/features/splash/presentation/view/widgets/custom_image_scale_animation.dart';
 
@@ -51,7 +52,7 @@ class _SplashViewState extends State<SplashView> {
 
   void durationNav() {
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, OnBoardingView.id);
+      Navigator.pushReplacementNamed(context, HomeView.id);
     });
   }
 }

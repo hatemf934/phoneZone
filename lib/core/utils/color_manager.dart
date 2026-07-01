@@ -16,8 +16,10 @@ class ColorManager {
   static const Color badgeText = Color(0xFF9B9BB8);
   static const Color sortButtonBorder = Color(0xFFDDDDDD);
   static const Color ratingColor = Color(0xffedb310);
-  static const Color lightGreen = Colors.lightGreen;
+  static const Color pinkColor = Color(0xFFFFEBEE);
   static const Color colorGreen = Colors.green;
-  static Color shimmerBase = Colors.grey.shade300;
-  static Color shimmerHighlight = Colors.grey.shade100;
+  static Color colorGrey300 = Colors.grey.shade300;
+  static Color colorGrey100 = Colors.grey.shade100;
+  static Color colorGrey50 = Colors.grey.shade50;
+  static Color colorGrey600 = Colors.grey.shade600;
 }
