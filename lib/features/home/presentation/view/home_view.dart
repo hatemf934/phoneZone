@@ -1,7 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:phone_zone/core/api/dio_class.dart';
+import 'package:phone_zone/core/helper/server_locator.dart';
 import 'package:phone_zone/core/utils/color_manager.dart';
 import 'package:phone_zone/core/utils/height_manager.dart';
 import 'package:phone_zone/core/utils/padding_manager.dart';
@@ -18,9 +17,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          PhoneCubit(PhoneRepoImplement(dioclass: DioClass(dio: Dio())))
-            ..getPhones(),
+      create: (context) => PhoneCubit(getIt<PhoneRepoImplement>())..getPhones(),
       child: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
