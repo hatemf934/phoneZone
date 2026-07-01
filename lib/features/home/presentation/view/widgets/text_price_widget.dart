@@ -6,16 +6,17 @@ import 'package:phone_zone/core/utils/raduis_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
 import 'package:phone_zone/core/utils/width_manager.dart';
+import 'package:phone_zone/features/home/data/model/phone_model.dart';
 
 class RowTextPriceWidget extends StatelessWidget {
-  const RowTextPriceWidget({super.key});
-
+  const RowTextPriceWidget({super.key, required this.phoneModel});
+  final PhoneModel phoneModel;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          '${TextManager.productCurrencySymbol}${300.toStringAsFixed(2)}',
+          '${TextManager.productCurrencySymbol}${phoneModel.price.toStringAsFixed(2)}',
           style: Styles.styleBlck87.copyWith(
             fontSize: FontSizeManager.font22,
             color: ColorManager.colorGreen,
@@ -32,7 +33,7 @@ class RowTextPriceWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(RaduisManager.r8),
           ),
           child: Text(
-            "${200.toStringAsFixed(1)}% OFF",
+            "${phoneModel.discountPercentage.toStringAsFixed(1)}${TextManager.offDiscount}",
             style: TextStyle(
               fontSize: FontSizeManager.font12,
               fontWeight: FontWeight.bold,

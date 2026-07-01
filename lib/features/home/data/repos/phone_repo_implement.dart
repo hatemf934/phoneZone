@@ -16,7 +16,7 @@ class PhoneRepoImplement extends PhoneRepo {
   Future<Either<Failure, List<PhoneModel>>> getAllPhones() async {
     try {
       final response = await dioclass.get(
-        "${EndPointClass.productbaseUrl}${EndPointClass.smartPhone}",
+        "${EndPointClass.productbaseUrl}${EndPointClass.product}${EndPointClass.smartPhone}",
       );
       List<dynamic> phonesJson = response[ApiKey.products];
       List<PhoneModel> phoneList = phonesJson
@@ -24,6 +24,24 @@ class PhoneRepoImplement extends PhoneRepo {
           .toList();
 
       return Right(phoneList);
+    } on DioException catch (e) {
+      return left(ServerFailure.fromDioException(e));
+    } on TypeError catch (e) {
+      return left(GeneralFailure.fromException(e));
+    } on FormatException catch (e) {
+      return left(GeneralFailure.fromException(e));
+    } catch (e) {
+      return left(GeneralFailure.fromException(e));
+    }
+  }
+
+  @override
+  Future<Either<Failure, PhoneModel>> getPhoneById(int id) async {
+    try {
+      final response = await dioclass.get(
+        "${EndPointClass.productbaseUrl}${EndPointClass.product}/$id",
+      );
+      return Right(PhoneModel.fromJson(response));
     } on DioException catch (e) {
       return left(ServerFailure.fromDioException(e));
     } on TypeError catch (e) {
