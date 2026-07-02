@@ -9,9 +9,9 @@ part 'phone_state.dart';
 class PhoneCubit extends Cubit<PhoneState> {
   PhoneCubit(this.phoneRepoImplement) : super(PhoneInitial());
   final PhoneRepoImplement phoneRepoImplement;
-  Future<void> getPhones() async {
+  Future<void> getPhones({required String baseUrl}) async {
     emit(PhoneLoading());
-    final result = await phoneRepoImplement.getAllPhones();
+    final result = await phoneRepoImplement.getAllPhones(baseUrl: baseUrl);
     result.fold(
       (failure) {
         emit(PhoneFailure(failure: failure));

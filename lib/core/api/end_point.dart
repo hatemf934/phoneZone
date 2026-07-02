@@ -4,6 +4,7 @@ class EndPointClass {
   static String productbaseUrl = "https://dummyjson.com/";
   static String smartPhone = "category/smartphones";
   static String product = "products/";
+  static String mobileAccessories = "category/mobile-accessories";
   static String signup = "users/";
   static String signin = "auth/login";
 }

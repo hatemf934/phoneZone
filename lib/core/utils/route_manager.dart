@@ -6,4 +6,5 @@ class RouteManager {
   static const String productView = "prosuct_view";
   static const String signIn = "sign_in_view";
   static const String signUp = "sign_up_view";
+  static const String accessoriesBundle = "accessories_bundle";
 }

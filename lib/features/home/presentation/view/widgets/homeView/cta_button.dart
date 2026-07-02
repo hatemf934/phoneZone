@@ -5,6 +5,7 @@ import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/raduis_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
+import 'package:phone_zone/features/home/presentation/view/accessories_bundle_view.dart';
 
 class CtaButton extends StatelessWidget {
   const CtaButton({super.key});
@@ -12,7 +13,7 @@ class CtaButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Navigator.pushNamed(context, AccessoriesBundleView.id),
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: PaddingManager.p20,

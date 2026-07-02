@@ -13,11 +13,11 @@ class PhoneRepoImplement extends PhoneRepo {
 
   PhoneRepoImplement({required this.dioclass});
   @override
-  Future<Either<Failure, List<PhoneModel>>> getAllPhones() async {
+  Future<Either<Failure, List<PhoneModel>>> getAllPhones({
+    required String baseUrl,
+  }) async {
     try {
-      final response = await dioclass.get(
-        "${EndPointClass.productbaseUrl}${EndPointClass.product}${EndPointClass.smartPhone}",
-      );
+      final response = await dioclass.get(baseUrl);
       List<dynamic> phonesJson = response[ApiKey.products];
       List<PhoneModel> phoneList = phonesJson
           .map((phone) => PhoneModel.fromJson(phone))

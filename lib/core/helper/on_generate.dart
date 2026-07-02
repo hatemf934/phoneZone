@@ -3,6 +3,7 @@ import 'package:phone_zone/core/utils/route_manager.dart';
 import 'package:phone_zone/features/auth/presentation/view/sign_in_view.dart';
 import 'package:phone_zone/features/auth/presentation/view/sign_up_view.dart';
 import 'package:phone_zone/features/home/data/model/phone_model.dart';
+import 'package:phone_zone/features/home/presentation/view/accessories_bundle_view.dart';
 import 'package:phone_zone/features/home/presentation/view/home_view.dart';
 import 'package:phone_zone/features/home/presentation/view/product_view.dart';
 import 'package:phone_zone/features/onboarding/presentation/view/on_boarding_view.dart';
@@ -20,6 +21,10 @@ Route<dynamic> onGenerateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(builder: (context) => const SignInView());
     case RouteManager.signUp:
       return MaterialPageRoute(builder: (context) => const SignUpView());
+    case RouteManager.accessoriesBundle:
+      return MaterialPageRoute(
+        builder: (context) => const AccessoriesBundleView(),
+      );
     case RouteManager.productView:
       final phoneModel = routeSettings.arguments as PhoneModel;
       return MaterialPageRoute(
