@@ -55,4 +55,12 @@ class TextManager {
   static const String height = "Height";
   static const String depth = "Depth";
   static const String cmText = "cm";
+  static const String all = "All";
+  static const String samsung = "Samsung";
+  static const String apple = "Apple";
+  static const String oppo = "Oppo";
+  static const String realme = "Realme";
+  static const String vivo = "Vivo";
+  static const String laptop = "Laptop";
+  static const String tablets = "Tablets";
 }

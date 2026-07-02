@@ -5,6 +5,13 @@ class EndPointClass {
   static String smartPhone = "category/smartphones";
   static String product = "products/";
   static String mobileAccessories = "category/mobile-accessories";
+  static String laptops = "category/laptops";
+  static String tablets = "category/tablets";
+  static String samsungSearch = "search?q=samsung";
+  static String iphoneSearch = "search?q=iphone";
+  static String oppoSearch = "search?q=oppo";
+  static String realmeSearch = "search?q=realme";
+  static String vivoSearch = "search?q=vivo";
   static String signup = "users/";
   static String signin = "auth/login";
 }
