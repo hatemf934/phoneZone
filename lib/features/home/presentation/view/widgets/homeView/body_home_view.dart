@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phone_zone/core/utils/color_manager.dart';
 import 'package:phone_zone/core/utils/height_manager.dart';
 import 'package:phone_zone/core/utils/padding_manager.dart';
+import 'package:phone_zone/features/home/presentation/bloc/phone_cubit/phone_cubit.dart';
 import 'package:phone_zone/features/home/presentation/view/widgets/homeView/home_body.dart';
 import 'package:phone_zone/features/home/presentation/view/widgets/homeView/shop_top_bar.dart';
 
@@ -33,6 +35,9 @@ class BodyHomeView extends StatelessWidget {
               hasUnreadNotification: true,
               onCartTap: () {},
               onNotificationTap: () {},
+              onSearchChanged: (value) {
+                context.read<PhoneCubit>().searchPhones(value);
+              },
             ),
             Expanded(child: HomeBodyDetails()),
           ],

@@ -4,6 +4,7 @@ import 'package:phone_zone/core/api/end_point.dart';
 import 'package:phone_zone/core/widgets/error_view.dart';
 import 'package:phone_zone/features/home/presentation/bloc/phone_cubit/phone_cubit.dart';
 import 'package:phone_zone/features/home/presentation/view/widgets/homeView/custom_grid_view.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/no_result_found.dart';
 import 'package:phone_zone/features/home/presentation/view/widgets/homeView/shimmer_grid_view.dart';
 
 class BuilderHomeBodyDetails extends StatelessWidget {
@@ -27,6 +28,8 @@ class BuilderHomeBodyDetails extends StatelessWidget {
               );
             },
           );
+        } else if (state is NoResult) {
+          return const NoResultFound();
         }
         return SizedBox.shrink();
       },

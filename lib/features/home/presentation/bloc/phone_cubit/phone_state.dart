@@ -18,3 +18,5 @@ final class PhoneFailure extends PhoneState {
 
   PhoneFailure({required this.failure});
 }
+
+final class NoResult extends PhoneState {}

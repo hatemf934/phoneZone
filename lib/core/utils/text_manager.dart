@@ -63,4 +63,5 @@ class TextManager {
   static const String vivo = "Vivo";
   static const String laptop = "Laptop";
   static const String tablets = "Tablets";
+  static const String noResult = "No results found";
 }
