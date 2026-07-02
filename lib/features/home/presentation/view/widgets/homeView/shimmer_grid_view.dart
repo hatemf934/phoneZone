@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/product_shimmer.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/product_shimmer.dart';
 
 class ShimmerGridView extends StatelessWidget {
   const ShimmerGridView({super.key});

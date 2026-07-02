@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:phone_zone/features/home/data/model/phone_model.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/product_card.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/product_card.dart';
 
 class CustomGridView extends StatelessWidget {
   const CustomGridView({super.key, required this.phoneModel});

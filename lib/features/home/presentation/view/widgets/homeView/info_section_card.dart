@@ -4,7 +4,7 @@ import 'package:phone_zone/core/utils/height_manager.dart';
 import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/features/home/data/model/phone_model.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/add_prosuct_to_card_section.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/add_prosuct_to_card_section.dart';
 import 'package:phone_zone/features/home/presentation/view/widgets/rating_section.dart';
 
 class InfoSection extends StatelessWidget {

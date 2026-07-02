@@ -6,7 +6,7 @@ import 'package:phone_zone/core/widgets/custom_cached_image.dart';
 import 'package:phone_zone/features/home/data/model/phone_model.dart';
 import 'package:phone_zone/features/home/presentation/bloc/phone_details/phone_details_cubit.dart';
 import 'package:phone_zone/features/home/presentation/view/product_view.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/info_section_card.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/info_section_card.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.phoneModel});

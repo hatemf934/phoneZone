@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/width_manager.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/icon_button_app_bar.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/search_app_bar.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/icon_button_app_bar.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/search_app_bar.dart';
 
 class ShopTopBar extends StatelessWidget {
   final ValueChanged<String>? onSearchChanged;

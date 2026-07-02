@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/custom_animated_container.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/productView/custom_animated_container.dart';
 
 class AddToCartButton extends StatefulWidget {
   const AddToCartButton({super.key});

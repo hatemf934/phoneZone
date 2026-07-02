@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phone_zone/core/helper/server_locator.dart';
-import 'package:phone_zone/core/utils/color_manager.dart';
-import 'package:phone_zone/core/utils/height_manager.dart';
-import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/route_manager.dart';
 import 'package:phone_zone/features/home/data/repos/phone_repo_implement.dart';
 import 'package:phone_zone/features/home/presentation/bloc/phone_cubit/phone_cubit.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/home_body.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/shop_top_bar.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/body_home_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -18,37 +14,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => PhoneCubit(getIt<PhoneRepoImplement>())..getPhones(),
-      child: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                ColorManager.primaryColor,
-                ColorManager.colorWhite,
-                ColorManager.colorWhite,
-                ColorManager.colorWhite,
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(PaddingManager.p16),
-            child: Column(
-              children: [
-                const SizedBox(height: HeightManager.h55),
-                ShopTopBar(
-                  cartItemCount: 3,
-                  hasUnreadNotification: true,
-                  onCartTap: () {},
-                  onNotificationTap: () {},
-                ),
-                Expanded(child: HomeBody()),
-              ],
-            ),
-          ),
-        ),
-      ),
+      child: Scaffold(body: const BodyHomeView()),
     );
   }
 }

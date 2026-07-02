@@ -6,8 +6,8 @@ import 'package:phone_zone/core/utils/padding_manager.dart';
 import 'package:phone_zone/core/utils/raduis_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/cta_button.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/promo_title.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/cta_button.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/promo_badge.dart';
 
 class PromoBannerCard extends StatelessWidget {
   const PromoBannerCard({super.key});

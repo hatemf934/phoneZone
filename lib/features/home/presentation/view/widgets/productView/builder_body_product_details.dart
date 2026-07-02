@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:phone_zone/core/widgets/error_view.dart';
 import 'package:phone_zone/features/home/data/model/phone_model.dart';
 import 'package:phone_zone/features/home/presentation/bloc/phone_details/phone_details_cubit.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/product_details_content.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/product_details_shimmer.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/productView/product_details_content.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/productView/product_details_shimmer.dart';
 
 class BuilderBodyProductDetails extends StatelessWidget {
   const BuilderBodyProductDetails({super.key, required this.phoneModel});
@@ -16,13 +16,15 @@ class BuilderBodyProductDetails extends StatelessWidget {
         if (state is PhoneDetailLoading) {
           return ProductDetailsShimmer();
         } else if (state is PhoneDetailFailure) {
-          return ErrorView(
-            failure: state.failure,
-            onRetry: () {
-              context.read<PhoneDetailsCubit>().getPhoneByid(
-                phoneModel.idProduct,
-              );
-            },
+          return Center(
+            child: ErrorView(
+              failure: state.failure,
+              onRetry: () {
+                context.read<PhoneDetailsCubit>().getPhoneByid(
+                  phoneModel.idProduct,
+                );
+              },
+            ),
           );
         } else if (state is PhoneDetailSeccess) {
           return ProductDetailsContent(phoneModel: state.phoneModel);

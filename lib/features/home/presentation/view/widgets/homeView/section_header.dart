@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:phone_zone/core/utils/font_size_manager.dart';
 import 'package:phone_zone/core/utils/styles.dart';
 import 'package:phone_zone/core/utils/text_manager.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/sort_button.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/sort_button.dart';
 
 class SectionHeader extends StatelessWidget {
   const SectionHeader({super.key});

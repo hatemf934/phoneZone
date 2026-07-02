@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phone_zone/core/utils/height_manager.dart';
 import 'package:phone_zone/core/utils/width_manager.dart';
-import 'package:phone_zone/features/home/presentation/view/widgets/catogery_chip.dart';
+import 'package:phone_zone/features/home/presentation/view/widgets/homeView/catogery_chip.dart';
 
 class ListCategoryChip extends StatefulWidget {
   const ListCategoryChip({super.key});
